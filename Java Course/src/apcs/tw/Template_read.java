@@ -36,8 +36,7 @@ public class Template_read {
                total = total + others ;
           }
           
-          System.out.println(total);          
-
+          System.out.println(total);        
      }
      
      
@@ -73,8 +72,5 @@ public class Template_read {
                }
                System.out.println(total);
           }
-          
-         
      }
-
 }

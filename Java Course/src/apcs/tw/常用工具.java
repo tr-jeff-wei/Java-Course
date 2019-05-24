@@ -50,8 +50,7 @@ public class 常用工具 {
           int k = -5, a = 7, b = 3;
           int k2 = Math.abs(k);      // 去掉［負號］      k2->5 
           int maxN = Math.max(a, b); // 拿到［大］的數  maxN->7
-          int minN = Math.min(a, b); // 拿到［小］的數  minN->3
-          
+          int minN = Math.min(a, b); // 拿到［小］的數  minN->3          
 
 
      }
