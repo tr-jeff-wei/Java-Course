@@ -29,7 +29,6 @@ public class Template_read_模擬 {
       */
 
      public static void main1(String[] args) throws UnsupportedEncodingException {
-
           
           String data = "3\n" + 
                     "5\n" + 
@@ -38,8 +37,7 @@ public class Template_read_模擬 {
                     "15\n" + 
                     "" ;
           InputStream testInput = new ByteArrayInputStream(data.getBytes("UTF-8"));
-          System.setIn(testInput);
-          
+          System.setIn(testInput);          
           
           // 建立取得輸入物件
           Scanner sc = new Scanner(System.in) ;
@@ -51,7 +49,6 @@ public class Template_read_模擬 {
           }
           
           System.out.println(total);          
-
      }
      
      
