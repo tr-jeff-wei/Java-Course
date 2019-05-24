@@ -34,8 +34,7 @@ public class Template_read {
           for( int i=0 ; i<n1 ; i++) {
                int others = sc.nextInt() ;
                total = total + others ;
-          }
-          
+          }          
           System.out.println(total);        
      }
      
