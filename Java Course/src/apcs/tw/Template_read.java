@@ -22,7 +22,7 @@ public class Template_read {
       *  input-> 5
       *  input-> 7
       *  input-> 9
-      *  output---> 15
+      *  output---> 21
       */
 
      public static void main1(String[] args) {
