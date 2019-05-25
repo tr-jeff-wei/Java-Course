@@ -39,6 +39,35 @@ public class Template_read {
      }
      
      
+     /*
+      * 
+      * 使用者輸入 
+      * > 1 行：起始數字 
+      * > 2 行：結束數字 
+      * 結果輸出
+      * > 起始到結束數字
+      * 
+      * 範例：
+      *  input-> 3
+      *  input-> 9
+      *  output---> 3 4 5 6 7 8 9
+      */
+
+     public static void main2(String[] args) {
+
+          // 建立取得輸入物件
+          Scanner sc = new Scanner(System.in) ;
+          int n1 = sc.nextInt();
+          int n2 = sc.nextInt();          
+          for( int i=n1 ; i<=n2 ; i++) {
+               int others = sc.nextInt() ;
+               System.out.println(others);  
+          }          
+                
+     }     
+     
+     
+     
      /**
       *
       *使用者輸入 
