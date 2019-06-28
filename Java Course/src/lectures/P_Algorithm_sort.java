@@ -7,7 +7,7 @@ public class P_Algorithm_sort {
 
     public static void main(String[] args) {
         int[] test = new int[]{2, 5, 3, 6, 9, 1};
-        insertionSort(test);
+        bubbleSort(test);
         System.out.println(Arrays.toString(test));
     }
 
@@ -49,15 +49,23 @@ public class P_Algorithm_sort {
     }
 
     static void bubbleSort(int arr[]) {
+
         int n = arr.length;
-        for (int i = 0; i < n - 1; i++)
-            for (int j = 0; j < n - i - 1; j++)
+
+        // c : 每一輪要扣掉不做的最後面 c 個
+        for (int c = 1; c < n ; c++) {
+
+            for (int j = 0; j < n-c ; j++) {
+
+                // 和下一位兩兩相比
                 if (arr[j] > arr[j + 1]) {
-                    // swap arr[j+1] and arr[i]
-                    int temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
+
+                    // 交換 arr[j+1] and arr[j]
+                    swap(arr, j, j + 1);
                 }
+
+            }
+        }
     }
 
     public static void swap(int[] arr, int m, int n) {
