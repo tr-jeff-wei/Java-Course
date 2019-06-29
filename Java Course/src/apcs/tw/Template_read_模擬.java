@@ -66,14 +66,14 @@ public class Template_read_模擬 {
      * output---> 7
      * output---> 14
      */
-    public static void main2(String[] args) throws UnsupportedEncodingException {
+    public static void main2(String[] args)  {
 
         String data = "3 2 4\n" +
                 "5 6 7\n" +
                 "2 5\n" +
                 "2 4 6 2\n" +
                 "";
-        InputStream testInput = new ByteArrayInputStream(data.getBytes("UTF-8"));
+        InputStream testInput = new ByteArrayInputStream(data.getBytes());
         System.setIn(testInput);
 
         // 建立取得輸入物件
@@ -106,12 +106,12 @@ public class Template_read_模擬 {
      * output---> 大家好很高興來到這謝謝
      **/
 
-    public static void main3(String[] args) throws UnsupportedEncodingException {
+    public static void main3(String[] args)  {
         String data = "3\n" +
                 "大家好！\n" +
                 "很高興來到這，\n" +
                 "謝謝！";
-        InputStream testInput = new ByteArrayInputStream(data.getBytes("UTF-8"));
+        InputStream testInput = new ByteArrayInputStream(data.getBytes());
         System.setIn(testInput);
 
         // 建立取得輸入物件
