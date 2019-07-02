@@ -27,7 +27,7 @@ public class Template_read_模擬 {
      *  output---> 21
      */
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
 
         String data = "3\n" +
                 "5\n" +
