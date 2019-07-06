@@ -6,7 +6,7 @@ import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
-public class J201710_P1 {
+public class J10610_P1 {
 
 
     public static void main(String[] args) {

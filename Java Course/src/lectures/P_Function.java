@@ -16,7 +16,7 @@ public class P_Function {
 
         Scanner input = new Scanner(System.in) ;
         int luckyNumber = (int)(Math.random()*10) ;
-        int guess = 0 ;
+        int guess  ;
 
 
         System.out.println("請猜猜幸運數字是？");
