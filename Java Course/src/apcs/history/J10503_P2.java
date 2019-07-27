@@ -36,7 +36,7 @@ public class J10503_P2 {
                 data[ri][ci] = sc.nextInt() ;
             }
         }
-//        showTable(data);
+        showTable(data);
 
         // 旋轉 , 翻轉
         for (int i = 0; i < m; i++) {
@@ -97,13 +97,12 @@ public class J10503_P2 {
 
     static void showTable(int[][] table) {
         System.out.println("===================");
-        for (int ri = 0; ri < table.length; ri++) {
-            for (int ci = 0; ci < table[ri].length; ci++) {
-                System.out.print(table[ri][ci]+" ");
+        for (int mi = 0; mi < table.length; mi++) {
+            for (int ni = 0; ni < table[mi].length; ni++) {
+                System.out.print(table[mi][ni]+" ");
             }
             System.out.println();
         }
-
         System.out.println("===================");
     }
 
