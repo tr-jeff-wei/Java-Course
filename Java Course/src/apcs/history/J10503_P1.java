@@ -55,6 +55,7 @@ public class J10503_P1 {
                 System.out.print(" "+data[i]);
             }
         }
+
         System.out.println();
 
         if( max == -1){

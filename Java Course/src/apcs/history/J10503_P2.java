@@ -33,10 +33,9 @@ public class J10503_P2 {
         int[][] data = new int[r][c] ;
         for (int ri = 0; ri < r; ri++) {
             for (int ci = 0; ci < c; ci++) {
-                data[ri][ci] = sc.nextInt() ;
+                data[ri][ci] = sc.nextInt();
             }
         }
-        showTable(data);
 
         // 旋轉 , 翻轉
         for (int i = 0; i < m; i++) {
