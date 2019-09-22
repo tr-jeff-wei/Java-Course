@@ -32,7 +32,6 @@ public class J10603_P3 {
         InputStream is = new ByteArrayInputStream(input.getBytes());
         System.setIn(is);
 
-
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int direction = sc.nextInt();
@@ -61,13 +60,10 @@ public class J10603_P3 {
             startx = next[0];
             starty = next[1];
             direction = next[2];
-
         }
-
     }
 
     static int[] firstStep(int[][] matrix, int x, int y, int direction) {
-
 
         // 先印出現在的內容
         System.out.print(matrix[x][y]);
@@ -78,38 +74,25 @@ public class J10603_P3 {
         int[] next = new int[3];
         switch (direction) {
             case UP:
-
-                // 往前
                 next[0] = x;
                 next[1] = y - 1;
                 next[2] = UP;
-
                 return next;
             case RIGHT:
-
-                // 往前
                 next[0] = x + 1;
                 next[1] = y;
                 next[2] = RIGHT;
-
                 return next;
             case DOWN:
-
-                // 往前
                 next[0] = x;
                 next[1] = y + 1;
                 next[2] = DOWN;
-
                 return next;
             case LEFT:
-
-                // 往前
                 next[0] = x - 1;
                 next[1] = y;
                 next[2] = LEFT;
-
                 return next;
-
         }
         return null;
     }
@@ -119,7 +102,6 @@ public class J10603_P3 {
         if (x < 0 || y < 0 || x >= matrix.length || y >= matrix.length) {
             return null;
         }
-
 
         // 先印出現在的內容
         System.out.print(matrix[x][y]);
