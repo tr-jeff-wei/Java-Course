@@ -9,14 +9,18 @@ public class J10503_P4 {
 
 
     public static void main(String[] args) {
-        String input = "8\n" +
-                "0 1\n" +
-                "0 2\n" +
-                "0 3\n" +
-                "7 0\n" +
-                "1 4\n" +
-                "1 5\n" +
-                "3 6\n";
+//        String input = "8\n" +
+//                "0 1\n" +
+//                "0 2\n" +
+//                "0 3\n" +
+//                "7 0\n" +
+//                "1 4\n" +
+//                "1 5\n" +
+//                "3 6\n";
+        String input ="4\n"+
+                "0 1\n"+
+                "0 2\n"+
+                "2 3\n" ;
 
 
         InputStream is = new ByteArrayInputStream(input.getBytes());
@@ -48,7 +52,7 @@ public class J10503_P4 {
                 break ;
             }
         }
-        top.generation=0 ;
+        top.generation=1 ;
 
         // 從最上層往下走
         int maxGeneration = top.generation ;
@@ -66,7 +70,8 @@ public class J10503_P4 {
             }
         }
 
-        System.out.println("Generation : "+maxGeneration);
+        System.out.println(maxGeneration);
+        //System.out.println("Generation : "+maxGeneration);
     }
 
 }
