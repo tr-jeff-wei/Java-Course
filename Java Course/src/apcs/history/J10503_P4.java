@@ -77,10 +77,8 @@ public class J10503_P4 {
 }
 
 class Member{
-
     int id ;
     Member parent ;
     ArrayList<Member> children = new ArrayList<>() ;
     int generation ;
-
 }
