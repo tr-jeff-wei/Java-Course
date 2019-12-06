@@ -66,7 +66,16 @@ public class B3_Bus {
                 break ;
             }
 
-            System.out.println( stationHr[question-1]+":"+stationMin[question-1]);
+            String sh = ""+stationHr[question-1] ;
+            if(sh.length()<2){
+                sh="0"+sh ;
+            }
+            String sm = ""+stationMin[question-1] ;
+            if( sm.length()<2){
+                sm="0"+sm ;
+
+            }
+            System.out.println( sh+":"+sm);
         }
 
 
