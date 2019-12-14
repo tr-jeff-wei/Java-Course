@@ -20,7 +20,6 @@ public class S_A2_礦工 {
         InputStream is = new ByteArrayInputStream(input.getBytes());
         System.setIn(is);
 
-
         Scanner sc = new Scanner(System.in) ;
 
         // 取寬高
@@ -34,18 +33,27 @@ public class S_A2_礦工 {
             }
         }
 
+        int max = -1 ;
+        int targetX = -1 ;
+        int targetY = -1 ;
         for (int hi = 0; hi < h; hi++) {
             for (int wi = 0; wi < w; wi++) {
                 int total = 0 ;
-                total+=value( wi , hi , panel) ;
-                total+=value( wi-1 , hi , panel) ;
-                total+=value( wi+1 , hi , panel) ;
-                total+=value( wi , hi-1 , panel) ;
-                total+=value( wi , hi+1 , panel) ;
-                System.out.println(wi+" , "+hi+"  ==> "+total);
+                total+=value( wi , hi , panel) ;        // 自己
+                total+=value( wi-1 , hi , panel) ;  // 左
+                total+=value( wi+1 , hi , panel) ;  // 右
+                total+=value( wi , hi-1 , panel) ;  // 上
+                total+=value( wi , hi+1 , panel) ;  // 下
+                //System.out.println(wi+" , "+hi+"  ==> "+total);
+                if( total > max){
+                    max = total ;
+                    targetX = wi ;
+                    targetY = hi ;
+                }
             }
         }
 
+        System.out.println(targetX+" "+targetY);
 
     }
     static int value( int wi , int hi , int[][] table){
