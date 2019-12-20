@@ -2,6 +2,7 @@ package lectures;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class S_A2_換位置 {
@@ -20,27 +21,72 @@ public class S_A2_換位置 {
                 "3\n" +
                 "C 1 4\n" +
                 "R 2 3\n" +
-                "R 5 0" ;
+                "R 1 0\n" ;
 
 
         InputStream is = new ByteArrayInputStream(input.getBytes());
         System.setIn(is);
 
         Scanner sc = new Scanner(System.in) ;
-        String data = sc.nextLine() ;
+        int w = sc.nextInt() ;
+        int h = sc.nextInt() ;
+        sc.nextLine();
+        char[][] sites = new char[h][w] ;
 
-        char[] place = new char[input.length()] ;   // 每個地方的字母
-        int[]  count = new int[input.length()] ;    // 字母對應票數
+        for (int i = 0; i < h; i++) {
+            String s = sc.nextLine() ;
+            for (int j = 0; j < s.length(); j++) {
+                sites[i][j] = s.charAt(j) ;
+            }
+//            System.out.println(Arrays.toString(sites[i]));
+        }
+
+        show(sites);
+
+        int changeTimes = sc.nextInt() ;
+        sc.nextLine();
+        for (int i = 0; i < changeTimes; i++) {
+            String type = sc.next() ;
+            int a = sc.nextInt() ;
+            int b = sc.nextInt() ;
+            sc.nextLine();
+            if(type.equals("C")){
+                swap_C(a,b,sites);
+            }else if(type.equals("R")){
+                swap_R(a,b,sites);
+            }
+            show(sites);
+
+        }
+
 
     }
-    static int value( int wi , int hi , int[][] table){
 
-        if( hi<0 || hi>= table.length){
-            return 0 ;
+    static void swap_R( int ai , int bi , char[][] sites){
+        for (int i = 0; i < sites[0].length; i++) {
+            swap( ai , i , bi , i , sites);
         }
-        if( wi<0 || wi>= table[hi].length){
-            return 0 ;
-        }
-        return table[hi][wi];
     }
+
+    static void swap_C( int aj , int bj , char[][] sites){
+        for (int i = 0; i < sites.length; i++) {
+            swap(  i , aj ,  i , bj , sites);
+        }
+    }
+    static void swap( int ai , int aj , int bi , int bj , char[][] sites){
+        // a --> tmp
+        char tmp = sites[ai][aj] ;
+        // b --> a
+        sites[ai][aj] = sites[bi][bj] ;
+        // tmp --> b
+        sites[bi][bj] = tmp ;
+    }
+
+    static void show(char[][] sites){
+        for (int i = 0; i < sites.length; i++) {
+            System.out.println(Arrays.toString(sites[i]));
+        }
+        System.out.println("==================");
+    }
+
 }
