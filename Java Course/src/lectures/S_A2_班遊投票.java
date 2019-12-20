@@ -42,15 +42,26 @@ public class S_A2_班遊投票 {
                 // 都沒有紀錄，走到最後一個，填內容
                 if(place[placeIdx]=='-'){
                     place[placeIdx]=c ;
-                    count[placeIdx]++;
+                    count[placeIdx]=1;
                     break ;
                 }
             }
         }
 
+        // 尋找最高票
+        int max = -1 , maxIdx = -1 ;
+        for (int i = 0; i < count.length; i++) {
+            if( count[i]>max){
+                max = count[i] ;
+                maxIdx = i ;
+            }
+        }
+        System.out.println(place[maxIdx]+" "+count[maxIdx]);
+
+
         // 檢查結果
-        System.out.println(Arrays.toString(place));
-        System.out.println(Arrays.toString(count));
+//        System.out.println(Arrays.toString(place));
+//        System.out.println(Arrays.toString(count));
 
     }
     static int value( int wi , int hi , int[][] table){
