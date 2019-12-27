@@ -41,7 +41,7 @@ public class S_A2_換位置 {
 //            System.out.println(Arrays.toString(sites[i]));
         }
 
-        show(sites);
+        //show(sites);
 
         int changeTimes = sc.nextInt() ;
         sc.nextLine();
@@ -55,7 +55,7 @@ public class S_A2_換位置 {
             }else if(type.equals("R")){
                 swap_R(a,b,sites);
             }
-            show(sites);
+            //show(sites);
 
         }
 
