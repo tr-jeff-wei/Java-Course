@@ -49,27 +49,26 @@ public class J10603_P4 {
     }
     static boolean check( int[] loc , int radius , int k ){
 
-        int start = -1 ;
-        int end = -1;
-
-        int i=0 ;
-        int counter = 0;
-        while(i<loc.length){
-            if( loc[i] > end) {
-                start = loc[i];
-                end = start + radius;
-                counter++;
-                if (counter > k) {
-                    return false;
+            int start = -1 ;
+            int end = -1;
+            int i=0 ;
+            int counter = 0;
+            while(i<loc.length){
+                if( loc[i] > end) {
+                    start = loc[i];
+                    end = start + radius;
+                    counter++;
+                    if (counter > k) {
+                        return false;
+                    }
                 }
+                i++;
             }
-            i++;
-        }
-        if( counter >k ){
-            return false ;
-        }else{
-            return true ;
-        }
+            if( counter >k ){
+                return false ;
+            }else{
+                return true ;
+            }
 
     }
 
