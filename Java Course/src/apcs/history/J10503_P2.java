@@ -8,7 +8,7 @@ public class J10503_P2 {
 
 
     public static void main(String[] args) {
-        String input = "";
+//        String input = "";
 //                input = "3 2 3\n" +
 //                "1 1\n" +
 //                "3 1\n" +
@@ -16,48 +16,55 @@ public class J10503_P2 {
 //                "1 0 0\n" +
 //                "";
 
-        input = "3 2 2\n" +
-                "3 3\n" +
-                "2 1\n" +
-                "1 2\n" +
-                "0 1\n" +
-                "";
+//        input = "3 2 2\n" +
+//                "3 3\n" +
+//                "2 1\n" +
+//                "1 2\n" +
+//                "0 1\n" +
+//                "";
 
-        InputStream is = new ByteArrayInputStream(input.getBytes());
-        System.setIn(is);
+//        InputStream is = new ByteArrayInputStream(input.getBytes());
+//        System.setIn(is);
 
         Scanner sc = new Scanner(System.in);
-        int r = sc.nextInt() ;
-        int c = sc.nextInt() ;
-        int m = sc.nextInt() ;
-        int[][] data = new int[r][c] ;
-        for (int ri = 0; ri < r; ri++) {
-            for (int ci = 0; ci < c; ci++) {
-                data[ri][ci] = sc.nextInt();
+        while(sc.hasNextInt()) {
+            int r = sc.nextInt();
+            int c = sc.nextInt();
+            int m = sc.nextInt();
+            int[][] data = new int[r][c];
+            for (int ri = 0; ri < r; ri++) {
+                for (int ci = 0; ci < c; ci++) {
+                    data[ri][ci] = sc.nextInt();
+                }
             }
-        }
 
-        // 旋轉 , 翻轉
-        for (int i = 0; i < m; i++) {
-            int mi = sc.nextInt() ;
-            switch (mi){
-                case 0:
-                    data = rotateTable(data) ;
-                    break ;
-                case 1:
-                    swapTable(data);
-                    break;
-            }
+            // 旋轉 , 翻轉
+            for (int i = 0; i < m; i++) {
+                int mi = sc.nextInt();
+                switch (mi) {
+                    case 0:
+                        data = rotateTable(data);
+                        break;
+                    case 1:
+                        swapTable(data);
+                        break;
+                }
 //            System.out.println("==>"+mi);
 //            showTable(data);
-        }
-        System.out.println( data.length+" "+data[0].length);
-        for (int ri = 0; ri < data.length; ri++) {
-            for (int ci = 0; ci < data[ri].length; ci++) {
-                System.out.print( data[ri][ci]+" ");
             }
-            System.out.println();
+            System.out.println(data.length + " " + data[0].length);
+            for (int ri = 0; ri < data.length; ri++) {
+                for (int ci = 0; ci < data[ri].length; ci++) {
+                    if (ci == data[ri].length - 1) {
+                        System.out.print(data[ri][ci]);
+                    } else {
+                        System.out.print(data[ri][ci] + " ");
+                    }
+                }
+                System.out.println();
+            }
         }
+        sc.close();
     }
 
     static int[][] rotateTable(int[][] table) {
