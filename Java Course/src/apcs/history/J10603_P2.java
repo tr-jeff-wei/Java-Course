@@ -8,11 +8,11 @@ public class J10603_P2 {
 
     public static void main(String[] args) {
 
-        String input = "10\n4 7 2 9 6 0 8 1 5 3\n"; // 答案 4
-        input = "3\n0 2 1\n"; // 答案2
-
-        InputStream is = new ByteArrayInputStream(input.getBytes());
-        System.setIn(is);
+//        String input = "10\n4 7 2 9 6 0 8 1 5 3\n"; // 答案 4
+//        input = "3\n0 2 1\n"; // 答案2
+//
+//        InputStream is = new ByteArrayInputStream(input.getBytes());
+//        System.setIn(is);
 
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt() ;

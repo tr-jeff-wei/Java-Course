@@ -1,46 +1,46 @@
 package apcs.history;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
+import java.io.*;
 import java.util.Scanner;
 
 public class J10503_P2 {
 
 
-    public static void main(String[] args) {
-//        String input = "";
-//                input = "3 2 3\n" +
+    public static void main(String[] args) throws IOException {
+//        String input = "3 2 3\n" +
 //                "1 1\n" +
 //                "3 1\n" +
 //                "1 2\n" +
 //                "1 0 0\n" +
-//                "";
-
-//        input = "3 2 2\n" +
+//                "3 2 2\n" +
 //                "3 3\n" +
 //                "2 1\n" +
 //                "1 2\n" +
-//                "0 1\n" +
-//                "";
-
+//                "0 1\n";
+//
+//
 //        InputStream is = new ByteArrayInputStream(input.getBytes());
 //        System.setIn(is);
 
-        Scanner sc = new Scanner(System.in);
-        while(sc.hasNextInt()) {
-            int r = sc.nextInt();
-            int c = sc.nextInt();
-            int m = sc.nextInt();
+        BufferedReader buf = new BufferedReader(  new InputStreamReader(System.in));
+        String s = buf.readLine();
+        while (s!=null && s.length()>0) {
+            String[] tokens = s.split(" ") ;
+            int r = Integer.parseInt(tokens[0] );
+            int c = Integer.parseInt(tokens[1] );
+            int m = Integer.parseInt(tokens[2] );
             int[][] data = new int[r][c];
             for (int ri = 0; ri < r; ri++) {
+                tokens = buf.readLine().split(" ") ;
                 for (int ci = 0; ci < c; ci++) {
-                    data[ri][ci] = sc.nextInt();
+                    data[ri][ci] = Integer.parseInt(tokens[ci]);
                 }
             }
 
             // 旋轉 , 翻轉
-            for (int i = 0; i < m; i++) {
-                int mi = sc.nextInt();
+            tokens = buf.readLine().split(" ") ;
+            for (int i = 0; i < tokens.length; i++) {
+                int mi = Integer.parseInt( tokens[i] ) ;
                 switch (mi) {
                     case 0:
                         data = rotateTable(data);
@@ -63,8 +63,8 @@ public class J10503_P2 {
                 }
                 System.out.println();
             }
+            s = buf.readLine();
         }
-        sc.close();
     }
 
     static int[][] rotateTable(int[][] table) {
@@ -94,7 +94,6 @@ public class J10503_P2 {
                 int tmp = table[top][ci];
                 table[top][ci] = table[bottom][ci];
                 table[bottom][ci] = tmp;
-
             }
             top++;
             bottom--;

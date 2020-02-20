@@ -45,8 +45,7 @@ public class J10503_P4_3 {
 
         //Scanner sc = new Scanner(System.in);
 
-        BufferedReader buf = new BufferedReader(
-                new InputStreamReader(System.in));
+        BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
         String s = buf.readLine();
         while (s!=null && s.length()>0) {
             finalMax = 0;

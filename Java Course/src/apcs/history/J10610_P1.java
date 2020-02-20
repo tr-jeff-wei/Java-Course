@@ -12,23 +12,24 @@ public class J10610_P1 {
     public static void main(String[] args) {
 
 
-        String data = "0 0 0";
-        prog(data);
+//        String data = "0 0 0";
+//        prog(data);
+//
+//        data = "1 1 1";
+//        prog(data);
+//
+//        data = "3 0 1";
+//        prog(data);
+//
+//        data = "0 0 1";
+//        prog(data);
 
-        data = "1 1 1";
-        prog(data);
-
-        data = "3 0 1";
-        prog(data);
-
-        data = "0 0 1";
-        prog(data);
-
+        prog(null);
     }
 
     public static void prog(String data) {
-        InputStream is = new ByteArrayInputStream(data.getBytes(StandardCharsets.UTF_8));
-        System.setIn(is);
+//        InputStream is = new ByteArrayInputStream(data.getBytes(StandardCharsets.UTF_8));
+//        System.setIn(is);
 
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
@@ -36,7 +37,7 @@ public class J10610_P1 {
         int c = sc.nextInt();
 
 
-        System.out.println("input => " + a + " , " + b + " , " + c);
+//        System.out.println("input => " + a + " , " + b + " , " + c);
         boolean isImpossible = true ;
         if (and(a, b) == c) {
             isImpossible = false ;
@@ -54,9 +55,9 @@ public class J10610_P1 {
             System.out.println("IMPOSSIBLE");
         }
 
-        PrintStream tmp = System.out ;
+//        PrintStream tmp = System.out ;
 
-        System.out.println("=======================================");
+//        System.out.println("=======================================");
 
         //System.out.println(result);
 

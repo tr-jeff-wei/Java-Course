@@ -29,8 +29,8 @@ public class J10603_P3 {
 //                "6 7 8\n" +
 //                "";
 
-        InputStream is = new ByteArrayInputStream(input.getBytes());
-        System.setIn(is);
+//        InputStream is = new ByteArrayInputStream(input.getBytes());
+//        System.setIn(is);
 
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();

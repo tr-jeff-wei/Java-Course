@@ -15,20 +15,20 @@ public class J10610_P2 {
 
     public static void main(String[] args) {
 
-        String data = "2\n" +
-                "aafAXbbCDCCC\n" ;
-
-        data = "1\n" +
-                "aBBdaaa\n" ;
-
-        data = "3\n" +
-                "DDaasAAbbCC\n" ;
-
-        data = "3\n" +
-                "DDaaAAbbCC\n" ;
-
-        InputStream is = new ByteArrayInputStream(data.getBytes(StandardCharsets.UTF_8));
-        System.setIn(is);
+//        String data = "2\n" +
+//                "aafAXbbCDCCC\n" ;
+//
+//        data = "1\n" +
+//                "aBBdaaa\n" ;
+//
+//        data = "3\n" +
+//                "DDaasAAbbCC\n" ;
+//
+//        data = "3\n" +
+//                "DDaaAAbbCC\n" ;
+//
+//        InputStream is = new ByteArrayInputStream(data.getBytes(StandardCharsets.UTF_8));
+//        System.setIn(is);
 
         Scanner sc = new Scanner(System.in);
         n = sc.nextInt();
