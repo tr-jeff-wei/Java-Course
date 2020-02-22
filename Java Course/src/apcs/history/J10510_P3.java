@@ -8,15 +8,15 @@ import java.util.Scanner;
 public class J10510_P3 {
 
 
-    static ArrayList<Integer> list = new ArrayList<>();
+//    static ArrayList<Integer> list = new ArrayList<>();
 
     public static void main(String[] args) {
 
-        String input = "5 2 4\n";
-       // input = "8 3 6\n";
-
-        InputStream is = new ByteArrayInputStream(input.getBytes());
-        System.setIn(is);
+//        String input = "5 2 4\n";
+//       // input = "8 3 6\n";
+//
+//        InputStream is = new ByteArrayInputStream(input.getBytes());
+//        System.setIn(is);
 
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
