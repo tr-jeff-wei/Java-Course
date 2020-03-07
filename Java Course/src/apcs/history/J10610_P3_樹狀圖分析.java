@@ -14,6 +14,7 @@ public class J10610_P3_樹狀圖分析 {
         // 紀錄每個節點的上層
         // index:0 不使用，題目從 1 號開始
         int[] parent = new int[n+1] ;
+
         // 記錄節點深度
         int[] depth = new int[n+1] ;
         ArrayList<Integer> walkList = new ArrayList<>();
