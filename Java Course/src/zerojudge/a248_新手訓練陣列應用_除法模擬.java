@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
-public class a248_新手訓練陣列應用 {
+public class a248_新手訓練陣列應用_除法模擬 {
     public static void main(String[] args) throws IOException {
         //Scanner sc = new Scanner(System.in);
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
