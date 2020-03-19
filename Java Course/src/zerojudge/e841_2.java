@@ -1,9 +1,6 @@
 package zerojudge;
 
-
-import javax.xml.bind.SchemaOutputResolver;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class e841_2 {

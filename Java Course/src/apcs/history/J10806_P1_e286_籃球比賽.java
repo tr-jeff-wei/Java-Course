@@ -1,8 +1,8 @@
-package zerojudge;
+package apcs.history;
 
 import java.util.Scanner;
 
-public class e286_籃球比賽 {
+public class J10806_P1_e286_籃球比賽 {
 
         public static void main(String[] args) {
 

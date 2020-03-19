@@ -1,0 +1,105 @@
+package apcs.history;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+class P3 {
+
+    public static void method1() {
+
+        Scanner sc = new Scanner(System.in);
+        boolean[] result = new boolean[100000];
+        int n = sc.nextInt();
+        for (int i = 0; i < n; i++) {
+            int start = sc.nextInt();
+            int end = sc.nextInt();
+            for (int m = start; m < end; m++) {
+                result[m] = true;
+            }
+        }
+
+        int total = 0;
+        for (int i = 0; i < result.length; i++) {
+            if (result[i]) {
+                total++;
+            }
+        }
+        System.out.println(total);
+    }
+
+    public static void method2(String input) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        Segment[] lines = new Segment[n];
+        for (int i = 0; i < n; i++) {
+            int start = sc.nextInt();
+            int end = sc.nextInt();
+            lines[i] = new Segment();
+            lines[i].start = start;
+            lines[i].end = end;
+        }
+        Arrays.sort(lines);
+
+        for (int i = 1; i < lines.length; i++) {
+            for (int previous = i - 1; previous >= 0; previous--) {
+                if (lines[previous] != null) {
+                    if (lines[previous].isOverlapping(lines[i])) {
+                        lines[i] = null;
+                        break;
+                    }
+                }
+            }
+        }
+
+        int total = 0;
+        for (int i = 0; i < lines.length; i++) {
+            if (lines[i] != null) {
+                total = total + lines[i].getDistance();
+            }
+        }
+
+        System.out.println(total);
+    }
+
+}
+
+class Segment implements Comparable<Segment> {
+    int start;
+    int end;
+
+    public boolean isOverlapping(Segment other) {
+        if (start <= other.start) {
+
+            if (end >= other.start) {
+                merge(other);
+                return true;
+            } else {
+                return false;
+            }
+
+        } else {
+            if (other.end >= start) {
+                merge(other);
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public void merge(Segment other) {
+        start = Math.min(start, other.start);
+        end = Math.max(end, other.end);
+    }
+
+    public int getDistance() {
+        return end - start;
+    }
+
+    @Override
+    public int compareTo(Segment segment) {
+        return this.start - segment.start;
+    }
+}
