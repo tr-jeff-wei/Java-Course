@@ -5,12 +5,14 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
  * @author chuan
  */
-public class J10806_P3_e288_互補CP {
+class J10806_P3_e288_CP {
 
         public static void main(String[] args) throws IOException {
 
@@ -23,10 +25,9 @@ public class J10806_P3_e288_互補CP {
 //                System.setIn(is);
                 BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
                 String[] tokens = buf.readLine().split(" ");
-                int m = Integer.parseInt(tokens[0]);
                 int n = Integer.parseInt(tokens[1]);
                 long wholeGroup = 0l;
-                long[] group = new long[n];
+                HashMap<Long,Integer> group = new HashMap<>();
                 for (int i = 0; i < n; i++) {
                         String s = buf.readLine().trim();
                         long myGroup = 0l;
@@ -40,24 +41,31 @@ public class J10806_P3_e288_互補CP {
                                 wholeGroup = wholeGroup | pi;
                                 //System.out.println(Long.toBinaryString(myGroup));
                         }
-                        group[i] = myGroup;
-                        //System.out.println("----");
-
+                        Integer size = group.get(myGroup) ;
+                        if( size==null){
+                                group.put(myGroup, 1) ;
+                        }else{
+                                group.put(myGroup, size+1) ;
+                        }
                 }
                 //System.out.println("====");
                 //System.out.println(Long.toBinaryString(wholeGroup));
                 //System.out.println("====");
-
-                int pairCount = 0;
-                for (int g1 = 0; g1 < group.length; g1++) {
-                        for (int g2 = g1 + 1; g2 < group.length; g2++) {
-                                long result = group[g1] ^ group[g2];
-                                if (result == wholeGroup) {
-                                        //System.out.println("==> g1:" + g1 + "  g2:" + g2);
-                                        //System.out.println(Long.toBinaryString(result));
-                                        pairCount++;
-                                }
+               
+                int pairCount = 0 ;
+                for (Long long1 : group.keySet()) {
+                        Long another = long1^wholeGroup ;
+                        Integer a = group.get( long1) ;
+                        Integer b = group.get( another ) ;
+                        if( a!=null && b!=null){
+                                pairCount+=a*b;
                         }
+                        group.put(long1,null);
+                        if( b!=null)
+                        group.put(another,null) ;
+//                        if(group.isEmpty()){
+//                                break ;
+//                        }
                 }
 
                 System.out.println(pairCount);

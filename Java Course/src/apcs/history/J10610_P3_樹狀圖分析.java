@@ -22,7 +22,7 @@ public class J10610_P3_樹狀圖分析 {
         for (int i = 1; i <= n; i++) {
             int iNum = sc.nextInt() ;
             if( iNum==0 ){
-                // 屬於頁節點
+                // 屬於末端節點
                 walkList.add(i) ;
                 depth[i]=0; // 深度設為 0
             }else{
