@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package apcs.history;
+package apcs.tw;
 
 import java.util.Scanner;
 
