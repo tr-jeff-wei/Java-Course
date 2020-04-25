@@ -4,7 +4,7 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.Scanner;
 
-public class J10603_P3 {
+public class J10603_P3_數字龍捲風 {
 
     static final int LEFT = 0;
     static final int UP = 1;

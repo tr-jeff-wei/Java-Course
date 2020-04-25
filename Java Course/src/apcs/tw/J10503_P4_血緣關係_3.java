@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class J10503_P4_3 {
+public class J10503_P4_血緣關係_3 {
 
     static int finalMax;
 

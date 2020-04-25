@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Scanner;
 
-public class J10603_P4 {
+public class J10603_P4_基地台 {
 
 
 

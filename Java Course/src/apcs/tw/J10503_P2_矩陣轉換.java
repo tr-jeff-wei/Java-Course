@@ -3,7 +3,7 @@ package apcs.tw;
 import java.io.*;
 import java.util.Scanner;
 
-public class J10503_P2 {
+public class J10503_P2_矩陣轉換 {
 
 
     public static void main(String[] args) throws IOException {

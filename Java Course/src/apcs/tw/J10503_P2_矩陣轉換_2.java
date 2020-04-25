@@ -3,7 +3,7 @@ package apcs.tw;
 import java.io.*;
 import java.util.ArrayList;
 
-public class J10503_P2_2 {
+public class J10503_P2_矩陣轉換_2 {
 
     final static int RLen=0 ;
     final static int CLen=1 ;

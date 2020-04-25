@@ -6,7 +6,7 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class J10503_P3 {
+public class J10503_P3_線段覆蓋長度 {
 
 
     public static void main(String[] args) {

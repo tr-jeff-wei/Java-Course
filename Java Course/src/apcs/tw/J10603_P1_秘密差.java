@@ -5,7 +5,7 @@ import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class J10603_P1 {
+public class J10603_P1_秘密差 {
 
     public static void main(String[] args) {
 

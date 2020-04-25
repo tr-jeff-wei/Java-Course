@@ -3,7 +3,7 @@ package apcs.tw;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class J10503_P1_print {
+public class J10503_P1_成績指標_print {
 
     public static void main(String[] args) {
 

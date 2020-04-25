@@ -4,7 +4,7 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.Scanner;
 
-public class J10503_P2_print {
+public class J10503_P2_矩陣轉換_print {
 
 
     public static void main(String[] args) {

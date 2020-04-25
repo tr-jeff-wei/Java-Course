@@ -4,7 +4,7 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.Scanner;
 
-public class J10603_P2 {
+public class J10603_P2_小群體 {
 
     public static void main(String[] args) {
 
