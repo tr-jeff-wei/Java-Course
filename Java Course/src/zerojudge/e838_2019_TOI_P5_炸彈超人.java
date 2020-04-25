@@ -3,7 +3,7 @@ package zerojudge;
 
 import java.util.Scanner;
 
-public class e838 {
+public class e838_2019_TOI_P5_炸彈超人 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in) ;

@@ -2,7 +2,7 @@ package zerojudge;
 
 import java.util.Scanner;
 
-public class e835 {
+public class e835_2019_TOI_P2_表演座位{
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in) ;

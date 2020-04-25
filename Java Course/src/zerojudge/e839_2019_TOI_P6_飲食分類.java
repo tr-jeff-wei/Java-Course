@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class e839 {
+public class e839_2019_TOI_P6_飲食分類 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

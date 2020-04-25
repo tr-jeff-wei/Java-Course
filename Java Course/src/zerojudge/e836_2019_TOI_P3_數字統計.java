@@ -3,7 +3,7 @@ package zerojudge;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class e836 {
+public class e836_2019_TOI_P3_數字統計 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in) ;
