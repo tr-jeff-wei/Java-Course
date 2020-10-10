@@ -3,7 +3,8 @@ package apcs.tw;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
@@ -11,7 +12,9 @@ import java.util.HashMap;
  */
 class J10806_P3_e288_CP {
 
-        public static void main(String[] args) throws IOException {
+      static long wholeGroup;
+
+      public static void main(String[] args) throws IOException {
 
 //                String  input = "3 4\n"
 //                        + "ABzBc\n"
@@ -20,53 +23,89 @@ class J10806_P3_e288_CP {
 //                        + "zBAz\n";
 //                InputStream is = new ByteArrayInputStream(input.getBytes());
 //                System.setIn(is);
-                BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
-                String[] tokens = buf.readLine().split(" ");
-                int n = Integer.parseInt(tokens[1]);
-                long wholeGroup = 0l;
-                HashMap<Long,Integer> group = new HashMap<>();
-                for (int i = 0; i < n; i++) {
-                        String s = buf.readLine().trim();
-                        long myGroup = 0l;
-                        //System.out.println("====" + s);
-                        for (int si = 0; si < s.length(); si++) {
-                                char c = s.charAt(si);
-                                int ci = c - 'A';
-                                long pi = 1l << ci;
-                                ////System.out.println(c + " -->" + ci);
-                                myGroup = myGroup | pi;
-                                wholeGroup = wholeGroup | pi;
-                                //System.out.println(Long.toBinaryString(myGroup));
-                        }
-                        Integer size = group.get(myGroup) ;
-                        if( size==null){
-                                group.put(myGroup, 1) ;
-                        }else{
-                                group.put(myGroup, size+1) ;
-                        }
-                }
-                //System.out.println("====");
-                //System.out.println(Long.toBinaryString(wholeGroup));
-                //System.out.println("====");
-               
-                int pairCount = 0 ;
-                for (Long long1 : group.keySet()) {
-                        Long another = long1^wholeGroup ;
-                        Integer a = group.get( long1) ;
-                        Integer b = group.get( another ) ;
-                        if( a!=null && b!=null){
-                                pairCount+=a*b;
-                        }
-                        group.put(long1,null);
-                        if( b!=null)
-                        group.put(another,null) ;
-//                        if(group.isEmpty()){
-//                                break ;
-//                        }
-                }
+            BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
 
-                System.out.println(pairCount);
+            String[] tokens = buf.readLine().split(" ");
+            int nchars = Integer.parseInt(tokens[0]);
+            int n = Integer.parseInt(tokens[1]);
+            wholeGroup = (long) Math.pow(2, nchars) - 1;
 
-        }
+            ArrayList<Long> mySet = new ArrayList<>();
+            for (int i = 0; i < n; i++) {
+                  String s = buf.readLine().trim();
+                  long seqTag = 0l;
+                  //System.out.println("====" + s);
+                  for (int si = 0; si < s.length(); si++) {
+                        char c = s.charAt(si);
+                        int ci = charToCode(c);
+                        long pi = 1l << ci;
+                        ////System.out.println(c + " -->" + ci);
+                        seqTag = seqTag | pi;
+                        //System.out.println(Long.toBinaryString(seqTag));
+                  }
+                  mySet.add(seqTag);                
+            }
+            buf.close();
+
+            Collections.sort(mySet);
+
+            
+            int pc = count(mySet);
+            System.out.println(pc);
+
+      }
+
+      public static int count(ArrayList<Long> mySet) {
+            
+            // 使用 ai , bi 從前後夾擊
+            
+            int ai = 0;
+            int bi = mySet.size() - 1;
+
+            int pairCount = 0;
+
+            while (ai < bi) {
+                  long a = mySet.get(ai);
+                  long b = wholeGroup - a;
+
+                  while (mySet.get(bi) > b) {
+                        bi--;
+                        if (bi <= ai) {
+                              return pairCount;
+                        }
+                  }
+
+                  if (mySet.get(bi) == b) {
+
+                        int ac = 0;
+                        while (mySet.get(ai) == a) {
+                              ai++;
+                              ac++;
+                        }
+
+                        int bc = 0;
+                        while (mySet.get(bi) == b) {
+                              bi--;
+                              bc++;
+                        }
+                        pairCount += ac * bc;
+                  } else {
+                        while (mySet.get(ai) == a) {
+                              ai++;
+                        }
+                  }
+            }
+            return pairCount;
+      }
+
+      public static int charToCode(char c) {
+            // A B C ... Z    a     b   ... 
+            // 0  1 2 ...25  26   27 ...
+            if (c > 'Z') {
+                  return c - 'a' + 26;
+            } else {
+                  return c - 'A';
+            }
+      }
 
 }

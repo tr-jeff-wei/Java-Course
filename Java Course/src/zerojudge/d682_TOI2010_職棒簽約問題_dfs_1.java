@@ -2,7 +2,7 @@ package zerojudge;
 
 import java.util.Scanner;
 
-public class d682_TOI2010_職棒簽約問題_slow {
+public class d682_TOI2010_職棒簽約問題_dfs_1 {
 
       static int maxTotal = 0;
       static int[][] price;
@@ -25,7 +25,7 @@ public class d682_TOI2010_職棒簽約問題_slow {
                         price[i][j] = sc.nextInt();
                         ap[i][j] = sc.nextInt();
                   }
-            }
+            }           
             find(0, 0, 0);
             System.out.println(maxAp);
 

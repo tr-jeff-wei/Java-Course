@@ -12,6 +12,7 @@ public class d682_TOI2010_職棒簽約問題 {
             int r = sc.nextInt();
             int c = sc.nextInt();
             int maxAp = 0;
+            
             HashMap<Integer, Integer> costApMap = new HashMap<>();
             costApMap.put(0, 0);
 
@@ -25,14 +26,15 @@ public class d682_TOI2010_職棒簽約問題 {
                               price = sc.nextInt();
                               ap = sc.nextInt();
                         }
+                        // 上一層留下的所有結果
                         for (Integer cost : costApMap.keySet()) {
                               int totalCost = cost + price;
                               int totalAp = ap + costApMap.get(cost);
                               if (totalCost <= maxTotal) {
-                                    Integer tap = tmpMap.get(totalCost);
-                                    if (tap == null) {
+                                    Integer t_ap = tmpMap.get(totalCost);
+                                    if (t_ap == null) {
                                           tmpMap.put(totalCost, totalAp);
-                                    } else if (totalAp > tap) {
+                                    } else if (totalAp > t_ap) {
                                           tmpMap.put(totalCost, totalAp);
                                     }
                                     if (totalAp > maxAp) {
