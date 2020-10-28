@@ -11,14 +11,14 @@ import java.util.Scanner;
 public class c200_車牌等級_TOI練習賽 {
 
       public static void main(String[] args) {
-            String input = "5\n"
-                    + "01\n"
-                    + "0A\n"
-                    + "10\n"
-                    + "A0\n"
-                    + "A00\n";
-            InputStream is = new ByteArrayInputStream(input.getBytes());
-            System.setIn(is);
+//            String input = "5\n"
+//                    + "01\n"
+//                    + "0A\n"
+//                    + "10\n"
+//                    + "A0\n"
+//                    + "A00\n";
+//            InputStream is = new ByteArrayInputStream(input.getBytes());
+//            System.setIn(is);
 
             Scanner sc = new Scanner(System.in);
             int n = sc.nextInt();
@@ -37,10 +37,19 @@ public class c200_車牌等級_TOI練習賽 {
                         }
                         number = number + unit * digit;
                         unit = unit * 36;
+                        // --- 
+                        number %= 1688;
+                        unit %= 1688;
                   }
 
-                  System.out.println(1 + number % 1688);
-
+                  // System.out.println(1 + number % 1688);
+                  int result = 1 + number % 1688;
+                  System.out.println(result);
+//                 if( result == 720){
+//                       System.out.println(token);
+//                 }else{
+//                       System.out.println(result);
+//                 }
             }
 
       }
