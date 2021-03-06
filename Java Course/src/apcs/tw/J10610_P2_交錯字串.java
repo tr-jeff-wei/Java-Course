@@ -6,7 +6,7 @@ import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
-public class J10610_P2 {
+public class J10610_P2_交錯字串 {
 
     static int n ;
     static int thisTypeCount = 0 ;

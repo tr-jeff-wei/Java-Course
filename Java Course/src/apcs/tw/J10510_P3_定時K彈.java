@@ -1,11 +1,9 @@
 package apcs.tw;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class J10510_P3 {
+public class J10510_P3_定時K彈 {
 
 
 //    static ArrayList<Integer> list = new ArrayList<>();

@@ -1,9 +1,8 @@
 package apcs.tw;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class J10510_P4棒球遊戲 {
+public class J10510_P4_棒球遊戲 {
 
     static String[][] player = new String[9][5];
     static int maxOut = 0;
