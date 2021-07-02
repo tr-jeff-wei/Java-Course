@@ -28,10 +28,10 @@ public class J10510_P3_定時K彈 {
 
         int start = 0;
         int target = -1;
-        int last = -1;
+        
         for (int i = 0; i < K; i++) {
             target = (start + M - 1) % list.size();
-            last = list.remove(target);
+            list.remove(target);
             start = target % list.size();
         }
 
