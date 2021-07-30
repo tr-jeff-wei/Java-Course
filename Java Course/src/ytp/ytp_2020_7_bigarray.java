@@ -47,8 +47,8 @@ public class ytp_2020_7_bigarray {
                     + "4 2\n"
                     + "6 4\n"
                     + "5 1\n";
-            input="3 1\n" +
-"1 1\n";
+//            input="3 1\n" +
+//"1 1\n";
 
             InputStream is = new ByteArrayInputStream(input.getBytes());
             System.setIn(is);
@@ -59,12 +59,14 @@ public class ytp_2020_7_bigarray {
             int m = sc.nextInt();
 
             int[][] dp = new int[n][n];
+            boolean[][] pts = new boolean[n][n] ;
 
             for (int i = 0; i < m; i++) {
 
                   Pt p = new Pt(sc.nextInt(), sc.nextInt());
 //                  list.add() ;
                   dp[p.x][p.y] = 1;
+                  pts[p.x][p.y] = true;
             }
 
             showMatrix(dp);
@@ -110,7 +112,11 @@ public class ytp_2020_7_bigarray {
                                           r += dp[luX][luY];
                                     }
 
-                                    if (r == 1) {
+                                    System.out.println(luX+","+luY +"   ===>  "+rdX+","+rdY);
+                                    System.out.println("                r : "+r);
+                                    System.out.println("                p: "+checkPts(pts,luX,rdX,luY,rdY));
+                                    if (r == 1 &&
+                                            checkPts(pts,luX+1,rdX,luY+1,rdY)) {
                                           count++;
                                     }
                                     if (r > 1) {
@@ -143,5 +149,28 @@ public class ytp_2020_7_bigarray {
                   System.out.println("");
             }
 
+      }
+      
+      public static boolean checkPts(boolean[][] pts , int lx , int rx , int uy , int dy ){
+            
+            if( checkPt(pts,lx , uy)){
+                  return true ;
+            }
+            if( checkPt(pts,lx , dy)){
+                  return true ;
+            }
+            if( checkPt(pts,rx , uy)){
+                  return true ;
+            }
+            if( checkPt(pts,rx , dy)){
+                  return true ;
+            }
+            return false ;
+      }
+      static boolean checkPt(boolean[][] pts , int x , int y){
+            if( x>=0 && y>=0 && x<pts.length && y<pts[0].length){
+                  return pts[x][y] ;
+            }
+            return false ;
       }
 }
