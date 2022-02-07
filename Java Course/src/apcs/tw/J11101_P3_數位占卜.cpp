@@ -1,4 +1,8 @@
-#include<bits/stdc++.h>
+// #include<bits/stdc++.h>
+
+#include<iostream>
+#include<unordered_set>
+
 
 using namespace std;
 
@@ -25,18 +29,18 @@ int main()
             int m = (w.length() + len) / 2; // full string mid point
 
             // 檢查後段 pa 可以匹配最前面 pa ==>  w :  pari | pa  
-            string head2 = w.substr(m, w.length());
-            cout << w << " >>  " << len << " : " << head2 << " ==> " << w.find(head2) << endl;
+            string head2 = w.substr(m, w.length() - m);
+            //cout << w << " >>  " << len << " : " << head2 << " ==> " << w.find(head2) << endl;
             if (w.find(head2) != 0) {
                 continue;
             }
 
 
-            string target = w.substr(w.length() - m, m); // 2 ~4
-            cout << "target : " << target << endl;
+            string target = w.substr(w.length() - m, 2 * m - w.length()); // 2 ~4
+            //cout << "target : " << target << endl;
             if (strSet.find(target) != strSet.end()) {
 
-                cout << w << " >>  " << target << endl;
+                //cout << w << " >>  " << target << endl;
                 ans++;
             }
         }
