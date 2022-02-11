@@ -7,7 +7,7 @@ import java.util.Scanner;
  *
  * @author chuan
  */
-public class J109_P1_猜拳 {
+public class J10901_P1_猜拳 {
 
       // （0指石頭，2指剪刀，5指布）
       static int pss(int a, int b) {
