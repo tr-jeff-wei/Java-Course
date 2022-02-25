@@ -3,7 +3,7 @@ package apcs.tw;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class J10901_P3_貨物分配 {
+public class J10901_P4_貨物分配 {
 
 //      7 2
 //9 2 1 6 7 4 5

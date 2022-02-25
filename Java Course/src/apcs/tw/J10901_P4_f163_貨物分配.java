@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class J10901_P_f163_貨物分配 {
+public class J10901_P4_f163_貨物分配 {
 
       // dataPW
       static final int P = 0;// parent
