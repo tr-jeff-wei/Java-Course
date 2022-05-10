@@ -1,3 +1,5 @@
+package zerojudge;
+
 
 import java.util.Scanner;
 
