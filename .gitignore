@@ -443,3 +443,6 @@ Java Course/bin/homework/am_apcs_test_string.class
 *.ini
 *.ini
 *.ini
+*.exe
+.vscode/tasks.json
+.vscode/launch.json
